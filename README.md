@@ -158,14 +158,34 @@ Safety is the product's primary constraint. Convenience never bypasses these rul
 
 ### Install from a Bench
 
-Replace the repository URL and branch with your own values:
+From an existing Frappe Bench, install the current stable release with the
+immutable release tag. Pinning a tag makes the deployment repeatable even
+after newer releases are published.
 
 ```bash
 cd /path/to/frappe-bench
-bench get-app https://github.com/<owner>/frappe_config_pack.git --branch main
+bench get-app --branch v1.0.0 https://github.com/abdo-host/frappe_config_pack.git
 bench --site your-site.local install-app frappe_config_pack
 bench --site your-site.local migrate
+bench build --app frappe_config_pack
+bench restart
 ```
+
+`bench restart` applies to production benches managed by Supervisor or
+systemd. In a development bench, run `bench start` instead and refresh the
+browser after `bench build`.
+
+### Choose the right branch
+
+| Use case | Command |
+| --- | --- |
+| Stable, exact production release | `bench get-app --branch v1.0.0 https://github.com/abdo-host/frappe_config_pack.git` |
+| Latest stable release | `bench get-app https://github.com/abdo-host/frappe_config_pack.git` (uses the default `main` branch) |
+| Development or contribution | `bench get-app --branch develop https://github.com/abdo-host/frappe_config_pack.git` |
+
+After a future app update, run the last three commands again: `migrate`,
+`build --app frappe_config_pack`, and `restart` (or restart `bench start` in
+a development environment).
 
 After installation, open **Frappe Config Pack** from the Desk workspace. The workspace is available to users with the **System Manager** role.
 
