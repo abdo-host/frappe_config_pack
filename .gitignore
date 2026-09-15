@@ -1,0 +1,16 @@
+.DS_Store
+*.pyc
+*.egg-info
+*.swp
+tags
+node_modules
+PROJECT_SPEC.md
+__pycache__
+.venv/
+.pytest_cache/
+.ruff_cache/
+build/
+dist/
+htmlcov/
+coverage.xml
+*.fpack

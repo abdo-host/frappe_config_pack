@@ -1,0 +1,11 @@
+{
+ "content": null,
+ "doctype": "Page",
+ "module": "Frappe Config Pack",
+ "name": "config-pack-drift",
+ "page_name": "config-pack-drift",
+ "roles": [{"role": "System Manager"}],
+ "standard": "Yes",
+ "system_page": 0,
+ "title": "Configuration Drift"
+}

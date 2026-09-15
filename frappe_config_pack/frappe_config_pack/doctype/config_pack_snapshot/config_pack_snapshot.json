@@ -1,0 +1,105 @@
+{
+ "actions": [],
+ "autoname": "field:snapshot_id",
+ "creation": "2026-09-15 13:44:04.463082",
+ "doctype": "DocType",
+ "document_type": "Document",
+ "engine": "InnoDB",
+ "field_order": [
+  "snapshot_id",
+  "installation",
+  "created_on",
+  "created_by",
+  "resource_count",
+  "status",
+  "checksum",
+  "section_items",
+  "items"
+ ],
+ "fields": [
+  {
+   "fieldname": "snapshot_id",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "label": "Snapshot ID",
+   "read_only": 1,
+   "unique": 1
+  },
+  {
+   "fieldname": "installation",
+   "fieldtype": "Link",
+   "in_list_view": 1,
+   "label": "Installation",
+   "options": "Config Pack Installation",
+   "read_only": 1
+  },
+  {
+   "fieldname": "created_on",
+   "fieldtype": "Datetime",
+   "label": "Created On",
+   "read_only": 1
+  },
+  {
+   "fieldname": "created_by",
+   "fieldtype": "Link",
+   "label": "Created By",
+   "options": "User",
+   "read_only": 1
+  },
+  {
+   "fieldname": "resource_count",
+   "fieldtype": "Int",
+   "label": "Resource Count",
+   "read_only": 1
+  },
+  {
+   "fieldname": "status",
+   "fieldtype": "Select",
+   "in_list_view": 1,
+   "in_standard_filter": 1,
+   "label": "Status",
+   "options": "Ready\nRestoring\nPartially Restored\nRestored\nFailed",
+   "read_only": 1
+  },
+  {
+   "fieldname": "checksum",
+   "fieldtype": "Data",
+   "label": "Snapshot Checksum",
+   "read_only": 1
+  },
+  {
+   "fieldname": "section_items",
+   "fieldtype": "Section Break",
+   "label": "Snapshot Items"
+  },
+  {
+   "fieldname": "items",
+   "fieldtype": "Table",
+   "label": "Snapshot Items",
+   "options": "Config Pack Snapshot Item",
+   "read_only": 1
+  }
+ ],
+ "links": [],
+ "modified": "2026-09-15 15:30:02.350234",
+ "modified_by": "abdo.host@gmail.com",
+ "module": "Frappe Config Pack",
+ "name": "Config Pack Snapshot",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "print": 1,
+   "read": 1,
+   "role": "System Manager",
+   "write": 1
+  }
+ ],
+ "row_format": "Dynamic",
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": [],
+ "track_changes": 1
+}

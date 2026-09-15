@@ -1,0 +1,20 @@
+{
+ "actions": [],
+ "doctype": "DocType",
+ "editable_grid": 1,
+ "engine": "InnoDB",
+ "field_order": ["resource_type", "resource_identity", "change_type", "selected_action", "source_checksum", "target_checksum", "status", "error_message"],
+ "fields": [
+  {"fieldname": "resource_type", "fieldtype": "Data", "label": "Resource Type", "read_only": 1, "in_list_view": 1},
+  {"fieldname": "resource_identity", "fieldtype": "Data", "label": "Resource Identity", "read_only": 1, "in_list_view": 1},
+  {"fieldname": "change_type", "fieldtype": "Data", "label": "Change Type", "read_only": 1, "in_list_view": 1},
+  {"fieldname": "selected_action", "fieldtype": "Select", "label": "Selected Action", "options": "Create\nUpdate\nSkip\nKeep Target\nUse Package\nManual Merge", "read_only": 1, "in_list_view": 1},
+  {"fieldname": "source_checksum", "fieldtype": "Data", "label": "Source Checksum", "read_only": 1},
+  {"fieldname": "target_checksum", "fieldtype": "Data", "label": "Target Checksum Before Apply", "read_only": 1},
+  {"fieldname": "status", "fieldtype": "Data", "label": "Status", "read_only": 1, "in_list_view": 1},
+  {"fieldname": "error_message", "fieldtype": "Small Text", "label": "Error Message", "read_only": 1}
+ ],
+ "istable": 1,
+ "module": "Frappe Config Pack",
+ "name": "Config Pack Installation Item"
+}

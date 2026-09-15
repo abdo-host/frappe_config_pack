@@ -1,0 +1,21 @@
+{
+ "actions": [],
+ "doctype": "DocType",
+ "editable_grid": 1,
+ "engine": "InnoDB",
+ "field_order": ["resource_type", "resource_identity", "resource_name", "reference_doctype", "selected", "is_dependency", "dependency_reason", "checksum", "status"],
+ "fields": [
+  {"fieldname": "resource_type", "fieldtype": "Select", "label": "Resource Type", "options": "Client Script\nCustom DocPerm\nCustom Field\nNotification\nPrint Format\nProperty Setter\nReport\nRole\nServer Script\nWorkflow\nWorkflow State", "reqd": 1, "in_list_view": 1},
+  {"fieldname": "resource_identity", "fieldtype": "Data", "label": "Resource Identity", "reqd": 1, "in_list_view": 1},
+  {"fieldname": "resource_name", "fieldtype": "Data", "label": "Source Record Name", "reqd": 1, "read_only": 1},
+  {"fieldname": "reference_doctype", "fieldtype": "Link", "label": "Reference DocType", "options": "DocType", "read_only": 1},
+  {"fieldname": "selected", "fieldtype": "Check", "label": "Selected", "default": "1", "in_list_view": 1},
+  {"fieldname": "is_dependency", "fieldtype": "Check", "label": "Is Dependency", "default": "0"},
+  {"fieldname": "dependency_reason", "fieldtype": "Small Text", "label": "Dependency Reason", "read_only": 1},
+  {"fieldname": "checksum", "fieldtype": "Data", "label": "Checksum", "read_only": 1},
+  {"fieldname": "status", "fieldtype": "Data", "label": "Status", "read_only": 1}
+ ],
+ "istable": 1,
+ "module": "Frappe Config Pack",
+ "name": "Config Pack Resource"
+}

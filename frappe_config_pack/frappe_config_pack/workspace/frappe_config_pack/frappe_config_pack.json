@@ -1,0 +1,115 @@
+{
+  "charts": [],
+  "content": "[{\"id\":\"fcp-start\",\"type\":\"header\",\"data\":{\"text\":\"<span class=\\\"h4\\\"><b>Config Pack</b></span>\",\"col\":12}},{\"id\":\"fcp-new\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"New Config Pack\",\"col\":3}},{\"id\":\"fcp-export\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Export Config Pack\",\"col\":3}},{\"id\":\"fcp-import\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Import Config Pack\",\"col\":3}},{\"id\":\"fcp-history\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Deployment History\",\"col\":3}},{\"id\":\"fcp-drift\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Configuration Drift\",\"col\":3}},{\"id\":\"fcp-spacer\",\"type\":\"spacer\",\"data\":{\"col\":12}},{\"id\":\"fcp-documents\",\"type\":\"header\",\"data\":{\"text\":\"<span class=\\\"h4\\\"><b>Documents</b></span>\",\"col\":12}},{\"id\":\"fcp-configuration\",\"type\":\"card\",\"data\":{\"card_name\":\"Configuration\",\"col\":4}},{\"id\":\"fcp-deployments\",\"type\":\"card\",\"data\":{\"card_name\":\"Deployments\",\"col\":4}}]",
+  "creation": "2026-09-14 00:00:00.000000",
+  "custom_blocks": [],
+  "docstatus": 0,
+  "doctype": "Workspace",
+  "for_user": "",
+  "hide_custom": 0,
+  "icon": "customization",
+  "idx": 0,
+  "is_hidden": 0,
+  "label": "Frappe Config Pack",
+  "links": [
+    {
+      "hidden": 0,
+      "is_query_report": 0,
+      "label": "Configuration",
+      "link_count": 0,
+      "onboard": 0,
+      "type": "Card Break"
+    },
+    {
+      "dependencies": "",
+      "hidden": 0,
+      "is_query_report": 0,
+      "label": "Config Packs",
+      "link_count": 0,
+      "link_to": "Config Pack",
+      "link_type": "DocType",
+      "onboard": 0,
+      "type": "Link"
+    },
+    {
+      "hidden": 0,
+      "is_query_report": 0,
+      "label": "Deployments",
+      "link_count": 0,
+      "onboard": 0,
+      "type": "Card Break"
+    },
+    {
+      "dependencies": "",
+      "hidden": 0,
+      "is_query_report": 0,
+      "label": "Config Pack Installations",
+      "link_count": 0,
+      "link_to": "Config Pack Installation",
+      "link_type": "DocType",
+      "onboard": 0,
+      "type": "Link"
+    },
+    {
+      "dependencies": "",
+      "hidden": 0,
+      "is_query_report": 0,
+      "label": "Config Pack Snapshots",
+      "link_count": 0,
+      "link_to": "Config Pack Snapshot",
+      "link_type": "DocType",
+      "onboard": 0,
+      "type": "Link"
+    }
+  ],
+  "modified": "2026-09-14 00:40:00.000000",
+  "modified_by": "Administrator",
+  "module": "Frappe Config Pack",
+  "name": "Frappe Config Pack",
+  "number_cards": [],
+  "owner": "Administrator",
+  "parent_page": "",
+  "public": 1,
+  "quick_lists": [],
+  "restrict_to_domain": "",
+  "roles": [
+    {
+      "role": "System Manager"
+    }
+  ],
+  "sequence_id": 999.0,
+  "shortcuts": [
+    {
+      "color": "Blue",
+      "doc_view": "New",
+      "label": "New Config Pack",
+      "link_to": "Config Pack",
+      "type": "DocType"
+    },
+    {
+      "color": "Blue",
+      "label": "Export Config Pack",
+      "link_to": "config-pack-builder",
+      "type": "Page"
+    },
+    {
+      "color": "Blue",
+      "label": "Import Config Pack",
+      "link_to": "config-pack-import",
+      "type": "Page"
+    },
+    {
+      "color": "Blue",
+      "label": "Deployment History",
+      "link_to": "config-pack-history",
+      "type": "Page"
+    },
+    {
+      "color": "Blue",
+      "label": "Configuration Drift",
+      "link_to": "config-pack-drift",
+      "type": "Page"
+    }
+  ],
+  "title": "Frappe Config Pack"
+}

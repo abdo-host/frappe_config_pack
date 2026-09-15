@@ -1,0 +1,11 @@
+{
+ "content": null,
+ "doctype": "Page",
+ "module": "Frappe Config Pack",
+ "name": "config-pack-builder",
+ "page_name": "config-pack-builder",
+ "roles": [{"role": "System Manager"}],
+ "standard": "Yes",
+ "system_page": 0,
+ "title": "Config Pack Builder"
+}

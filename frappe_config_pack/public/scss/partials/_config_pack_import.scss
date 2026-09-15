@@ -1,0 +1,368 @@
+// Keep page-specific presentation local to the Config Pack import workflow.
+// Values come from Frappe's theme variables so the page follows the active desk theme.
+#page-config-pack-import {
+  .page-head {
+    display: none;
+  }
+
+  .custom-select {
+    cursor: pointer;
+  }
+
+  .table-sm th, .table-sm td {
+    padding: 0.3rem;
+  }
+}
+
+.fcp-import-shell {
+  margin: 20px auto 0 auto;
+  color: var(--text-color);
+
+  .fcp-import-hero {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 24px;
+    padding: 18px 20px;
+    border: 1px solid var(--border-color);
+    border-left: 3px solid var(--primary);
+    border-radius: var(--border-radius, 4px);
+    background: color-mix(in srgb, var(--primary) 4%, var(--fg-color));
+
+    h2 {
+      margin: 0;
+      font-size: 22px;
+      font-weight: 600;
+    }
+  }
+
+  .fcp-eyebrow,
+  .fcp-card-kicker {
+    margin: 0 0 4px;
+    color: var(--primary);
+    font-size: 11px;
+    font-weight: 600;
+    letter-spacing: .04em;
+  }
+
+  .fcp-hero-copy {
+    margin: 6px 0 0;
+    color: var(--text-muted);
+    font-size: 13px;
+  }
+
+  .fcp-trust-note {
+    display: none;
+  }
+
+  .fcp-workflow {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    margin: 16px 0;
+    border: 1px solid var(--border-color);
+    border-radius: var(--border-radius, 4px);
+    overflow: hidden;
+  }
+
+  .fcp-step {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    min-height: 58px;
+    padding: 10px 14px;
+    border-right: 1px solid var(--border-color);
+    background: var(--fg-color);
+
+    &:last-child {
+      border-right: 0;
+    }
+
+    > span {
+      display: grid;
+      width: 22px;
+      height: 22px;
+      place-items: center;
+      border-radius: 50%;
+      background: var(--control-bg);
+      color: var(--text-muted);
+      font-size: 11px;
+      font-weight: 600;
+    }
+
+    strong, small {
+      display: block;
+    }
+
+    strong {
+      font-size: 12px;
+      font-weight: 600;
+    }
+
+    small {
+      margin-top: 1px;
+      color: var(--text-muted);
+      font-size: 11px;
+    }
+
+    &.is-active {
+      background: color-mix(in srgb, var(--primary) 7%, var(--fg-color));
+      box-shadow: inset 0 2px 0 var(--primary);
+
+      > span {
+        background: var(--primary);
+        color: var(--fg-color);
+      }
+    }
+
+    &.is-complete > span {
+      background: color-mix(in srgb, var(--primary) 12%, var(--fg-color));
+      color: var(--primary);
+    }
+  }
+
+  .fcp-import-layout {
+    display: block;
+  }
+
+  .fcp-import-guide {
+    display: none;
+  }
+
+  .fcp-upload-card,
+  .fcp-panel,
+  .fcp-plan-card,
+  .fcp-apply-result,
+  .fcp-change-details {
+    margin: 0 0 16px;
+    padding: 20px;
+    border: 1px solid var(--border-color);
+    border-radius: var(--border-radius, 4px);
+    background: var(--fg-color);
+    box-shadow: none;
+  }
+
+  .fcp-upload-card {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+
+    h3, .fcp-panel h3, .fcp-plan-card h3, .fcp-apply-result h3 {
+      margin: 0;
+      font-size: 17px;
+      font-weight: 600;
+    }
+
+    .fcp-upload-card {
+      border-left: 3px solid color-mix(in srgb, var(--primary) 55%, var(--border-color));
+    }
+
+    p:not(.fcp-card-kicker) {
+      margin: 3px 0 0;
+      color: var(--text-muted);
+      font-size: 13px;
+    }
+  }
+
+  .fcp-upload-icon {
+    display: grid;
+    width: 34px;
+    height: 34px;
+    place-items: center;
+    border-radius: var(--border-radius, 4px);
+    background: color-mix(in srgb, var(--primary) 8%, var(--fg-color));
+    color: var(--primary);
+    font-size: 20px;
+  }
+
+  .fcp-start-upload {
+    margin-left: auto;
+  }
+
+  .fcp-panel-header {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    gap: 16px;
+    margin-bottom: 16px;
+  }
+
+  .fcp-panel-header h3,
+  .fcp-plan-card h3,
+  .fcp-apply-result h3 {
+    color: var(--primary);
+  }
+
+  .fcp-status-badge {
+    padding: 4px 8px;
+    border-radius: var(--border-radius, 4px);
+    font-size: 11px;
+    font-weight: 600;
+
+    &.is-green {
+      background: var(--green-100, #e8f8ed);
+      color: var(--green-600, #1f7a3e);
+    }
+
+    &.is-orange {
+      background: var(--yellow-100, #fff8db);
+      color: var(--yellow-700, #8a6100);
+    }
+
+    &.is-red {
+      background: var(--red-100, #fff0f0);
+      color: var(--red-600, #b52a2a);
+    }
+  }
+
+  .fcp-detail-grid,
+  .fcp-summary-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+    gap: 8px;
+    margin-bottom: 15px;
+  }
+
+  .fcp-detail {
+    min-height: 64px;
+    padding: 10px 12px;
+    border: 1px solid var(--border-color);
+    border-radius: var(--border-radius, 4px);
+    background: var(--control-bg);
+
+    span, strong {
+      display: block;
+    }
+
+    span {
+      color: var(--text-muted);
+      font-size: 11px;
+      font-weight: 500;
+    }
+
+    strong {
+      margin-top: 4px;
+      overflow-wrap: anywhere;
+      font-size: 13px;
+      font-weight: 600;
+    }
+  }
+
+  .fcp-resource-summary {
+    margin-top: 16px;
+
+    h5 {
+      margin: 0 0 8px;
+      font-size: 13px;
+      font-weight: 600;
+    }
+  }
+
+  .fcp-next-step {
+    margin: 16px 0 8px;
+    color: var(--text-muted);
+    font-size: 13px;
+  }
+
+  .config-pack-diff-results {
+    margin-top: 16px;
+  }
+
+  .fcp-review-table {
+    width: 100%;
+    margin: 0;
+    border: 1px solid var(--border-color);
+    border-radius: var(--border-radius, 4px);
+
+    th {
+      border: 0 !important;
+      background: var(--control-bg);
+      color: var(--text-muted);
+      font-size: 11px;
+      font-weight: 600;
+      text-transform: uppercase;
+    }
+
+    td {
+      padding-top: 12px !important;
+      padding-bottom: 12px !important;
+      vertical-align: middle !important;
+      border-color: var(--border-color) !important;
+    }
+
+    th:last-child, td:last-child {
+      width: 180px;
+    }
+
+    select {
+      width: 100%;
+      min-width: 0;
+      margin-bottom: 6px;
+    }
+
+    .btn {
+      margin: 0;
+    }
+  }
+
+  .fcp-plan-card {
+    border-left: 3px solid var(--primary);
+    background: color-mix(in srgb, var(--primary) 3%, var(--fg-color));
+  }
+
+  .fcp-apply-result {
+    border-color: var(--green-400, #76c893);
+    background: var(--fg-color);
+  }
+
+  .fcp-safe-message {
+    margin: 16px 0 10px;
+    color: var(--primary);
+    font-size: 13px;
+    font-weight: 500;
+  }
+
+  .fcp-applied-list, .fcp-issue-list {
+    margin: 14px 0 0;
+    padding-left: 18px;
+  }
+
+  .fcp-change-details {
+    margin-top: 12px;
+  }
+
+  @media (max-width: 800px) {
+    .fcp-workflow {
+      grid-template-columns: repeat(2, 1fr);
+    }
+    .fcp-step:nth-child(2) {
+      border-right: 0;
+    }
+    .fcp-step:nth-child(-n+2) {
+      border-bottom: 1px solid var(--border-color);
+    }
+  }
+
+  @media (max-width: 520px) {
+    .fcp-import-hero, .fcp-upload-card {
+      align-items: flex-start;
+      flex-direction: column;
+    }
+    .fcp-workflow {
+      grid-template-columns: 1fr;
+    }
+    .fcp-step, .fcp-step:nth-child(2) {
+      border-right: 0;
+      border-bottom: 1px solid var(--border-color);
+    }
+    .fcp-step:last-child {
+      border-bottom: 0;
+    }
+    .fcp-start-upload {
+      margin-left: 0;
+    }
+    .fcp-review-table {
+      display: block;
+      overflow-x: auto;
+    }
+  }
+}

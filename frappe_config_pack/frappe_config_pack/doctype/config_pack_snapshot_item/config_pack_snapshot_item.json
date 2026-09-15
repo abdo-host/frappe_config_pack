@@ -1,0 +1,17 @@
+{
+ "actions": [],
+ "doctype": "DocType",
+ "editable_grid": 1,
+ "engine": "InnoDB",
+ "field_order": ["resource_type", "resource_identity", "existed_before", "serialized_state", "checksum"],
+ "fields": [
+  {"fieldname": "resource_type", "fieldtype": "Data", "label": "Resource Type", "read_only": 1, "in_list_view": 1},
+  {"fieldname": "resource_identity", "fieldtype": "Data", "label": "Resource Identity", "read_only": 1, "in_list_view": 1},
+  {"fieldname": "existed_before", "fieldtype": "Check", "label": "Existed Before", "read_only": 1, "in_list_view": 1},
+  {"fieldname": "serialized_state", "fieldtype": "Code", "label": "Serialized State", "options": "JSON", "read_only": 1},
+  {"fieldname": "checksum", "fieldtype": "Data", "label": "Checksum", "read_only": 1}
+ ],
+ "istable": 1,
+ "module": "Frappe Config Pack",
+ "name": "Config Pack Snapshot Item"
+}
