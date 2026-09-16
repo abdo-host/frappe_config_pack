@@ -17,6 +17,14 @@ dependencies = [
 requires = ["flit_core >=3.4,<4"]
 build-backend = "flit_core.buildapi"
 
+[project.urls]
+Repository = "https://github.com/abdo-host/frappe_config_pack"
+"Bug Reports" = "https://github.com/abdo-host/frappe_config_pack/issues"
+"Privacy Policy" = "https://github.com/abdo-host/frappe_config_pack/blob/main/PRIVACY.md"
+
+[tool.bench.frappe-dependencies]
+frappe = ">=15.0.0,<17.0.0"
+
 # These dependencies are only installed when developer mode is enabled
 [tool.bench.dev-dependencies]
 # package_name = "~=1.1.0"
