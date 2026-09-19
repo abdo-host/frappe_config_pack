@@ -62,7 +62,7 @@ def build(context: Any, config_pack: str, as_json: bool) -> None:
 		pack = frappe.get_doc("Config Pack", config_pack)
 		pack.check_permission("write")
 		result = ConfigPackBuildService().build_and_store(pack)
-		frappe.db.commit()
+		frappe.db.commit()  # Bench commands must commit before frappe.destroy() disconnects. # nosemgrep
 		_emit({"config_pack": pack.name, **result}, as_json)
 
 
@@ -187,16 +187,16 @@ def apply(
 		except ConfigPackError as error:
 			savepoint.rollback()
 			repository.mark_failed(installation, error)
-			frappe.db.commit()
+			frappe.db.commit()  # Bench commands must commit before frappe.destroy() disconnects. # nosemgrep
 			raise click.ClickException(str(error)) from error
 		except Exception:
 			savepoint.rollback()
 			repository.mark_failed(installation, Exception("Unexpected deployment failure."))
-			frappe.db.commit()
+			frappe.db.commit()  # Bench commands must commit before frappe.destroy() disconnects. # nosemgrep
 			raise
 		savepoint.release()
 		repository.mark_installed(installation, result)
-		frappe.db.commit()
+		frappe.db.commit()  # Bench commands must commit before frappe.destroy() disconnects. # nosemgrep
 		_emit({"installation": installation.name, "snapshot": installation.snapshot, "result": result.as_dict()}, as_json)
 
 
@@ -237,10 +237,10 @@ def rollback(context: Any, installation: str, force: bool, yes: bool, as_json: b
 			result = RollbackService().execute(plan, FrappeRollbackExecutor(), force=force)
 		except ConfigPackError as error:
 			repository.mark_rollback_failed(record, error)
-			frappe.db.commit()
+			frappe.db.commit()  # Bench commands must commit before frappe.destroy() disconnects. # nosemgrep
 			raise click.ClickException(str(error)) from error
 		repository.mark_rollback_complete(record, result)
-		frappe.db.commit()
+		frappe.db.commit()  # Bench commands must commit before frappe.destroy() disconnects. # nosemgrep
 		_emit({"installation": record.name, "snapshot": record.snapshot, "result": result.as_dict()}, as_json)
 
 

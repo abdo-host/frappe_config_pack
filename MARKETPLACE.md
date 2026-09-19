@@ -18,17 +18,13 @@ Safely package, review, and deploy Frappe configuration changes.
 
 ## Long description
 
-Frappe Config Pack provides a controlled workflow for moving supported Frappe
-configuration between development, staging, and production sites. Build a
-portable configuration package from selected resources, inspect its
-compatibility, compare it with a target site, and review a dry-run plan before
-applying any change.
+Frappe Config Pack helps teams package, review, and safely apply supported
+Frappe configuration changes. Create reusable packages from selected resources,
+compare them with the current site configuration, and review planned changes
+before applying them.
 
-Deployment actions are explicit and reviewable. Before mutable changes are
-applied, the app captures snapshots to support rollback and records the
-installation outcome. Drift detection then compares the installed package with
-the current target state so administrators can identify configuration changes
-made outside the deployment workflow.
+The app keeps a clear record of applied packages and helps administrators spot
+configuration changes made after a package was applied.
 
 Supported resource types include Custom Fields, Property Setters, Workflows,
 Workflow States, Roles, Client Scripts, Server Scripts, Notifications, Print
