@@ -164,7 +164,7 @@ after newer releases are published.
 
 ```bash
 cd /path/to/frappe-bench
-bench get-app --branch v1.0.0 https://github.com/abdo-host/frappe_config_pack.git
+bench get-app --branch v1.0.1 https://github.com/abdo-host/frappe_config_pack.git
 bench --site your-site.local install-app frappe_config_pack
 bench --site your-site.local migrate
 bench build --app frappe_config_pack
@@ -179,7 +179,7 @@ browser after `bench build`.
 
 | Use case | Command |
 | --- | --- |
-| Stable, exact production release | `bench get-app --branch v1.0.0 https://github.com/abdo-host/frappe_config_pack.git` |
+| Stable, exact production release | `bench get-app --branch v1.0.1 https://github.com/abdo-host/frappe_config_pack.git` |
 | Latest stable release | `bench get-app https://github.com/abdo-host/frappe_config_pack.git` (uses the default `main` branch) |
 | Development or contribution | `bench get-app --branch develop https://github.com/abdo-host/frappe_config_pack.git` |
 
