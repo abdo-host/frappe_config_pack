@@ -20,7 +20,15 @@ jobs:
     runs-on: ubuntu-latest
     strategy:
       fail-fast: false
-    name: Server
+      matrix:
+        include:
+          - frappe_branch: version-15
+            python_version: '3.10'
+            node_version: 20
+          - frappe_branch: version-16
+            python_version: '3.14'
+            node_version: 24
+    name: Server (Frappe ${{ matrix.frappe_branch }})
 
     services:
       redis-cache:
@@ -51,12 +59,12 @@ jobs:
       - name: Setup Python
         uses: actions/setup-python@v5
         with:
-          python-version: '3.14'
+          python-version: ${{ matrix.python_version }}
 
       - name: Setup Node
         uses: actions/setup-node@v4
         with:
-          node-version: 24
+          node-version: ${{ matrix.node_version }}
           check-latest: true
 
       - name: Cache pip
@@ -86,7 +94,7 @@ jobs:
       - name: Setup
         run: |
           pip install frappe-bench
-          bench init --frappe-branch version-16 --skip-redis-config-generation --skip-assets --python "$(which python)" ~/frappe-bench
+          bench init --frappe-branch ${{ matrix.frappe_branch }} --skip-redis-config-generation --skip-assets --python "$(which python)" ~/frappe-bench
           mariadb --host 127.0.0.1 --port 3306 -u root -proot -e "SET GLOBAL character_set_server = 'utf8mb4'"
           mariadb --host 127.0.0.1 --port 3306 -u root -proot -e "SET GLOBAL collation_server = 'utf8mb4_unicode_ci'"
 
