@@ -4,11 +4,15 @@ name: CI
 on:
   push:
     branches:
+      - main
       - develop
   pull_request:
+    branches:
+      - main
+      - develop
 
 concurrency:
-  group: develop-frappe_config_pack-${{ github.event.number }}
+  group: ${{ github.workflow }}-${{ github.ref }}
   cancel-in-progress: true
 
 jobs:
